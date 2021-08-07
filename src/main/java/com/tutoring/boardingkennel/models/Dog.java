@@ -1,6 +1,9 @@
 package com.tutoring.boardingkennel.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -19,13 +22,19 @@ public class Dog {
     @Id
     @GeneratedValue
     private long id;
+    @NotBlank(message = "This field is required")
     private String breed;
+    @Min(value = 1, message = "Dog must be 1 year or older")
     private int age;
+    @NotBlank(message = "This field is required")
     private String name;
     private String allergies;
+    @Min(value = 1, message = "This field is required")
     private int amountOfFood; //in cups
     private int amountFed; //amount of food given to dog today
+    @NotNull(message = "This field is required")
     private boolean isFed;
+    @NotNull(message = "This field is required")
     @Enumerated(EnumType.STRING)
     private KennelSize kennelSize;
 //    @ManyToOne
