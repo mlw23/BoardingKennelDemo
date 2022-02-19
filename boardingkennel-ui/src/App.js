@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home';
-import CheckIn from './components/CheckIn';
 
 function App() {
   return (
